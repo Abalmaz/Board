@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Create New Board{% endblock %}
+{% block body %}
+  <div class="container">  
+    <div class="col-md-4">
+      <h4>New board</h4>
+      <form method="post">
+        {% if error %}
+          <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+          <div class="form-group">
+            <label for="username">User name</label>
+            <input type="text" class="form-control" id ="username" name="username" value="{{ creator }}">
+          </div>
+          <div class="form-group">
+            <label for="board_name">Board</label>
+            <textarea class="form-control" id="board_name" name="board_name" rows="2" value="{{ comment_text }}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Create</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
