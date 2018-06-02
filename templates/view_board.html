@@ -14,19 +14,14 @@
 		  </div>
 		</div>
 		<br>
-		<h5>Comments</h5>		
-		{% for comment in comments: %}
-		<div class="card" style="width: 40rem;">
-			<div class="card-header">{{ comment[0] }}</div>
-			<div class="card-body">
-				<div class="card-text">
-					{{ comment[1] }}
-				</div>
-			</div>
-		</div>	
-		{% endfor %}
-		<br>
-		<a class="badge badge-secondary" href="{{ board_id }}/add_comment" class="button">Add comment</a>
-	</div>	
-
+		<h5>Comments</h5>
+			{% for comment in comments %}
+		    <div class="comment">
+		        <strong>{{ comment[0] }}</strong>
+		        <p>{{ comment[1] }}</p>
+		    </div>
+		{% else%}
+		    <p>No comments here yet</p>
+		{% endfor %}		
+	<a class="badge badge-success" href="{{ board_id }}/add_comment" class="button">Add comment</a>
 {% endblock %}
